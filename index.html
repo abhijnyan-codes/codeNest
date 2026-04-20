@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeNest</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="mainContainer">
+        <header>
+            <a href="index.html" class="logo-container">
+                <img src="./Media/codeNest.svg" alt="Logo">
+                <span>CodeNest</span>
+            </a>
+
+            <div class="controls">
+                <!-- Dropdown -->
+                <div class="dropdown">
+                    <button class="dropdown-toggle">Select Language</button>
+                    <ul class="dropdown-menu">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>Python</li>
+                        <li>Java</li>
+                        <li>C++</li>
+                    </ul>
+                </div>
+
+                <!-- Theme -->
+                <label class="theme-toggle">
+                    <input type="checkbox" id="theme-toggle">
+                    <span class="slider"></span>
+                </label>
+
+                <!-- Run -->
+                <button class="run-button">
+                    <img src="./Media/play-button.png" alt="run" class="run-icon">
+                    Run
+                </button>
+
+                <!-- Clear -->
+                <button class="clear-button">
+                    <img src="./Media/bin.png" alt="clear" class="clear-icon">
+                    Clear
+                </button>
+
+                <!-- Download -->
+                <button class="download-button">
+                    <img src="./Media/download.png" alt="download" class="download-icon">
+                    Download
+                </button>
+
+                <button class="shortcuts-btn" id="shortcuts-btn">?</button>
+            </div>
+        </header>
+
+        <main>
+            <!-- File Explorer -->
+            <section class="file-explorer">
+                <div class="file-header">
+                    <h3>Files</h3>
+                    <button type="button" class="new-file">+ New File</button>
+                </div>
+                <ul class="file-list">
+                    <li class="file" data-file="index.html">index.html</li>
+                    <li class="file" data-file="style.css">style.css</li>
+                    <li class="file" data-file="script.js">script.js</li>
+                </ul>
+            </section>
+
+            <!-- Editor -->
+            <section class="editor">
+                <div class="editor-header">
+                    <!-- tabs created by JS -->
+                </div>
+                <div class="editor-area">
+                    <textarea placeholder="Write your code here..." id="editor-body"></textarea>
+                </div>
+            </section>
+
+            <!-- Input/Output -->
+            <section class="input-output">
+                <div class="input-section">
+                    <h3>Input</h3>
+                    <textarea placeholder="Enter input here..." id="input-text"></textarea>
+                </div>
+                <div class="output-section">
+                    <h3>Output <button class="maximize-btn" id="maximize-output">⛶</button></h3>
+                    <div class="output-box" id="output-box"></div>
+                </div>
+            </section>
+        </main>
+        <div class="status-bar">
+            <span id="status-language">HTML</span>
+            <span id="status-lines">Lines: 1</span>
+            <span id="status-chars">Chars: 0</span>
+            <span id="status-cursor">Ln 1, Col 1</span>
+        </div>
+    </div>
+    <div class="toast" id="toast"></div>
+    <div class="shortcuts-modal" id="shortcuts-modal">
+  <div class="shortcuts-content">
+    <div class="shortcuts-header">
+      <h3>Keyboard Shortcuts</h3>
+      <button id="shortcuts-close">✕</button>
+    </div>
+    <table class="shortcuts-table">
+      <tr><td>Run code</td><td><kbd>Ctrl</kbd> + <kbd>Enter</kbd></td></tr>
+      <tr><td>Clear editor</td><td><kbd>Ctrl</kbd> + <kbd>L</kbd></td></tr>
+      <tr><td>Download file</td><td><kbd>Ctrl</kbd> + <kbd>S</kbd></td></tr>
+      <tr><td>Shortcuts panel</td><td><kbd>Ctrl</kbd> + <kbd>/</kbd></td></tr>
+      <tr><td>Exit fullscreen</td><td><kbd>Esc</kbd></td></tr>
+      <tr><td>Insert tab</td><td><kbd>Tab</kbd></td></tr>
+    </table>
+  </div>
+</div>
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
